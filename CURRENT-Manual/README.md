@@ -3,6 +3,13 @@
 how to use them with the SKR V1.4 Turbo 3D printer controller board :exclamation:
 ```
  I use Git for Windows with VScode to manage this repository.  I also use Git LFS extenstion for .pdf and .png files.
+
+To Download the whole repository do the following: select the "Clone or download button" and click on "paste to clipboard" button so you can place the URL for the GitHub repository to the clipboard. Now Open Git Bash.
+Change the current working directory to the location where you want the cloned directory.
+Type git clone, and then paste the URL you copied earlier.
+$ git clone https://github.com/GadgetAngel/SKR-V1.4-Turbo-Stepper-Driver-Jumper-Configuration-Manual.git
+Press Enter to create your local clone.
+Now open Window explorer to the location of the local clone.
 ```
 ## Table of Contents:
 
