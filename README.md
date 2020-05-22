@@ -15,9 +15,6 @@ Now open Window explorer to the location of the local clone.
 ```
 ## The Whole Repository in .zip file is located at https://drive.google.com/open?id=1ynmA4rw3QM6oHC4VUYeIZJsgLPiWB8C3
 
-
-
-
 ## Table of Contents:
 
 ```
