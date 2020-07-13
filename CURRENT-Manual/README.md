@@ -17,7 +17,7 @@ The Repository contains a .zip file that contains the whole repository. So, one 
 
 Also, You can download the .zip from my google drive located here:
 
-## The Whole Repository in .zip file is located on Google Drive at: https://drive.google.com/open?id=1ynmA4rw3QM6oHC4VUYeIZJsgLPiWB8C3
+## The Whole Repository in .zip file is located on Google Drive at:  https://drive.google.com/file/d/1FvFCCCenZh_xMIvMoKWdRaBnWbXT4PAJ/view?usp=sharing
 
 ## Table of Contents:
 
@@ -25,330 +25,385 @@ Also, You can download the .zip from my google drive located here:
 Stepper Driver Configurations for SKR V1.4 Turbo Board
 By       @GadgetAngel
 
-POLOLU A4988.................................................................................................1
-  Driver Chip Chart for POLOLU A4988.........................................................................1
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set....2
-  Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board.......................................3
+Preface......................................................................................................1
+  What is a stepper motor?...................................................................................2
+  Stall Detection and Sensor-less Homing.....................................................................3
+    Requirements Needed to Make Sensor-less Homing Work......................................................3
+POLOLU A4988.................................................................................................4
+  Driver Chip Chart for POLOLU A4988.........................................................................4
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set....5
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board.....................................6
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set..............................................................................................5
-  The (latest release of) Marlin Setup for POLOLU A4988 Drivers.............................................10
-BIQU A4988..................................................................................................13
-  Driver Chip Chart for BIQU 4988...........................................................................13
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set...14
-  Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board......................................15
+    RST&SLP Set..............................................................................................8
+  The (latest release of) Marlin Setup for POLOLU A4988 Drivers.............................................13
+BIQU A4988..................................................................................................16
+  Driver Chip Chart for BIQU 4988...........................................................................16
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set...17
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board....................................18
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set.............................................................................................17
-  The (latest release of) Marlin Setup for BIQU A4988 Drivers...............................................22
-DRV8825.....................................................................................................25
-  Driver Chip Chart for POLOLU DRV8825......................................................................25
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set...26
-  Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board......................................27
+    RST&SLP Set.............................................................................................20
+  The (latest release of) Marlin Setup for BIQU A4988 Drivers...............................................25
+DRV8825.....................................................................................................28
+  Driver Chip Chart for POLOLU DRV8825......................................................................28
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set...29
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board....................................30
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set.............................................................................................29
-  The (latest release of) Marlin Setup for DRV8825 Drivers..................................................35
-BIQU LV8729.................................................................................................39
-  Driver Chip Chart for BIQU LV8729.........................................................................39
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set................................................................................................40
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-  Have RST&SLP Set..........................................................................................42
-  The (latest release of) Marlin Setup for BIQU LV8729 Drivers..............................................48
-FYSETC LV8729...............................................................................................53
-  Driver Chip Chart for FYSETC LV8729.......................................................................53
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set................................................................................................54
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-  Have RST&SLP Set..........................................................................................56
-  The (latest release of) Marlin Setup for FYSETC LV8729 Drivers............................................62
-LERDGE LV8729...............................................................................................67
-  Driver Chip Chart for LERDGE LV8729.......................................................................67
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set................................................................................................68
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set........................................................................................70
-  The (latest release of) Marlin Setup for LERDGE LV8729 Drivers............................................76
-MKS LV8729..................................................................................................81
-  Driver Chip Chart for MKS LV8729..........................................................................81
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set................................................................................................82
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set........................................................................................84
-  The (latest release of) Marlin Setup for MKS LV8729 Drivers...............................................90
-FYSETC S6128 V1.1...........................................................................................95
-  Driver Chip Chart for FYSETC S6128........................................................................95
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set...96
-    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board....................................97
+    RST&SLP Set.............................................................................................32
+  The (latest release of) Marlin Setup for DRV8825 Drivers..................................................38
+BIQU LV8729.................................................................................................42
+  Driver Chip Chart for BIQU LV8729.........................................................................42
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set........................................................................................43
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which 
+    Do Not Have RST&SLP Set.................................................................................45
+  The (latest release of) Marlin Setup for BIQU LV8729 Drivers..............................................51
+FYSETC LV8729...............................................................................................56
+  Driver Chip Chart for FYSETC LV8729.......................................................................56
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set........................................................................................57
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which 
+    Do Not Have RST&SLP Set.................................................................................59
+  The (latest release of) Marlin Setup for FYSETC LV8729 Drivers............................................65
+LERDGE LV8729...............................................................................................70
+  Driver Chip Chart for LERDGE LV8729.......................................................................70
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set........................................................................................71
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which 
+    Do Not Have RST&SLP Set.................................................................................73
+  The (latest release of) Marlin Setup for LERDGE LV8729 Drivers............................................79
+MKS LV8729..................................................................................................84
+  Driver Chip Chart for MKS LV8729..........................................................................84
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set........................................................................................85
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which 
+    Do Not Have RST&SLP Set.................................................................................87
+  The (latest release of) Marlin Setup for MKS LV8729 Drivers...............................................93
+FYSETC S6128 V1.1...........................................................................................98
+  Driver Chip Chart for FYSETC S6128........................................................................98
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set...99
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................100
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set.............................................................................................99
-  The (latest release of) Marlin Setup for FYSETC S6128 V1.1 Drivers.......................................105
-FYSETC ST820...............................................................................................110
-  Driver Chip Chart for FYSETC ST820.......................................................................110
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set..111
-    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................112
+    RST&SLP Set............................................................................................102
+  The (latest release of) Marlin Setup for FYSETC S6128 V1.1 Drivers.......................................108
+FYSETC ST820...............................................................................................113
+  Driver Chip Chart for FYSETC ST820.......................................................................113
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set..114
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................115
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set............................................................................................114
-  The (latest release of) Marlin Setup for FYSETC ST820 Drivers............................................120
-BIQU ST820.................................................................................................126
-  Driver Chip Chart for BIQU ST820.........................................................................126
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set..127
-    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................128
+    RST&SLP Set............................................................................................117
+  The (latest release of) Marlin Setup for FYSETC ST820 Drivers............................................123
+BIQU ST820.................................................................................................129
+  Driver Chip Chart for BIQU ST820.........................................................................129
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set..130
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................131
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set............................................................................................130
-  The (latest release of) Marlin Setup for BIQU ST820 Drivers..............................................136
-POLOLU ST820 (STSPIN820)...................................................................................142
-  Driver Chip Chart for POLOLU ST820.......................................................................142
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set..143
-    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................144
+    RST&SLP Set............................................................................................133
+  The (latest release of) Marlin Setup for BIQU ST820 Drivers..............................................139
+POLOLU ST820 (STSPIN820)...................................................................................145
+  Driver Chip Chart for POLOLU ST820.......................................................................145
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP PINS Set..146
+    Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board...................................147
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-    RST&SLP Set............................................................................................146
-  The (latest release of) Marlin Setup for POLOLU ST820 (STSPIN820) Drivers................................152
-POLOLU MP6500..............................................................................................158
-  Driver Chip Chart for POLOLU MP6500......................................................................158
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................159
+    RST&SLP Set............................................................................................149
+  The (latest release of) Marlin Setup for POLOLU ST820 (STSPIN820) Drivers................................155
+POLOLU MP6500..............................................................................................161
+  Driver Chip Chart for POLOLU MP6500......................................................................161
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................162
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers 
+    Which Do Not Have RST&SLP Set..........................................................................164
+  The (latest release of) Marlin Setup for POLOLU MP6500 Drivers...........................................168
+POLOLU TB67S249FTG.........................................................................................173
+  Driver Chip Chart for POLOLU TB67S249FTG.................................................................173
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................174
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................161
-  The (latest release of) Marlin Setup for POLOLU MP6500 Drivers...........................................165
-POLOLU TB67S249FTG.........................................................................................170
-  Driver Chip Chart for POLOLU TB67S249FTG.................................................................170
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................171
+    Have RST&SLP Set.......................................................................................176
+  The (latest release of) Marlin Setup for POLOLU TB67S249FTG Drivers......................................182
+BIQU S109..................................................................................................187
+  Driver Chip Chart for BIQU S109..........................................................................187
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................188
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................173
-  The (latest release of) Marlin Setup for POLOLU TB67S249FTG Drivers......................................179
-BIQU S109..................................................................................................184
-  Driver Chip Chart for BIQU S109..........................................................................184
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................185
+    Have RST&SLP Set.......................................................................................190
+  The (latest release of) Marlin Setup for BIQU S109 Drivers...............................................196
+FYSETC S109................................................................................................201
+  Driver Chip Chart for FYSETC S109........................................................................201
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................202
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................187
-  The (latest release of) Marlin Setup for BIQU S109 Drivers...............................................193
-FYSETC S109................................................................................................198
-  Driver Chip Chart for FYSETC S109........................................................................198
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................199
+    Have RST&SLP Set.......................................................................................204
+  The (latest release of) Marlin Setup for FYSETC S109 Drivers.............................................210
+BIQU TMC2100 Stand-alone Mode..............................................................................215
+  Driver Chip Chart for BIQU TMC2100 in Stand-alone Mode...................................................215
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers.................................216
+    How to Create aa SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers......................218
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers................220
+    Additional Equipment Needed for Low Low (STEP or FULL) Configuration...................................222
+  The (latest release of) Marlin Setup for BIQU TMC2100 Drivers in Stand-alone Mode........................230
+MKS TMC2100 Stand-alone Mode...............................................................................235
+  Driver Chip Chart for MKS TMC2100 in Stand-alone Mode....................................................235
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers.................................236
+    How to Create a SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers.......................238
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers................240
+    Additional Equipment Needed for Low Low (STEP or FULL) Configuration...................................242
+  The (latest release of) Marlin Setup for MKS TMC2100 Drivers in Stand-alone Mode.........................250
+BIQU TMC2130 Stand-alone Mode..............................................................................255
+  Driver Chip Chart for BIQU TMC2130 in Stand-alone Mode...................................................255
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers.................................256
+    How to Create a SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers.......................258
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers................260
+    Additional Equipment Needed for Low Low (STEP or FULL) Configuration...................................262
+  The (latest release of) Marlin Setup for BIQU TMC2130 Drivers in Stand-alone Mode........................270
+BIQU TMC2130 SPI Mode......................................................................................275
+  Driver Chip Chart for BIQU TMC2130 in SPI Mode...........................................................275
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in SPI Mode..............278
+  Information on Sensor-less Homing........................................................................281
+  The (latest release of) Marlin Setup for BIQU TMC2130 Drivers in SPI Mode................................285
+BIQU TMC2208 V3.0 Stand-alone Mode.........................................................................298
+  Driver Chip Chart for BIQU TMC2208 in Stand-alone Mode...................................................298
+  SKR V1.4 TURBO LEGEND of Driver Chip for Binary State Stepper Drivers Which Do Not Have RST&SLP PINS Set.299
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................201
-  The (latest release of) Marlin Setup for FYSETC S109 Drivers.............................................207
-BIQU TMC2100 Stand-alone Mode..............................................................................212
-  Driver Chip Chart for BIQU TMC2100 in Stand-alone Mode...................................................212
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers.................................213
-    How to Create aa SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers......................215
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers................217
-    Additional Equipment Needed for Low Low (STEP or FULL) Configuration...................................219
-  The (latest release of) Marlin Setup for BIQU TMC2100 Drivers in Stand-alone Mode........................227
-MKS TMC2100 Stand-alone Mode...............................................................................232
-  Driver Chip Chart for MKS TMC2100 in Stand-alone Mode....................................................232
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers.................................233
-    How to Create a SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers.......................235
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers................237
-    Additional Equipment Needed for Low Low (STEP or FULL) Configuration...................................239
-  The (latest release of) Marlin Setup for MKS TMC2100 Drivers in Stand-alone Mode.........................247
-BIQU TMC2130 Stand-alone Mode..............................................................................252
-  Driver Chip Chart for BIQU TMC2130 in Stand-alone Mode...................................................252
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers.................................253
-    How to Create a SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers.......................255
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers................257
-    Additional Equipment Needed for Low Low (STEP or FULL) Configuration...................................259
-  The (latest release of) Marlin Setup for BIQU TMC2130 Drivers in Stand-alone Mode........................267
-BIQU TMC2130 SPI Mode......................................................................................272
-  Driver Chip Chart for BIQU TMC2130 in SPI Mode...........................................................272
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in SPI Mode...............................275
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in SPI Mode..............277
-  Information on Sensor-less Homing........................................................................278
-  The (latest release of) Marlin Setup for BIQU TMC2130 Drivers in SPI Mode................................281
-BIQU TMC2208 V3.0 Stand-alone Mode.........................................................................294
-  Driver Chip Chart for BIQU TMC2208 in Stand-alone Mode...................................................294
-  SKR V1.4 TURBO LEGEND of Driver Chip for Binary State Stepper Drivers Which Do Not Have RST&SLP PINS Set.295
+    Have RST&SLP Set.......................................................................................301
+  The (latest release of) Marlin Setup for BIQU TMC2208 V3.0 Drivers in Stand-alone Mode...................305
+BIQU TMC2208 V3.0 One Time Programming (OTP) Mode..........................................................310
+  Driver Chip Chart for BIQU TMC2208 in OTP Mode...........................................................310
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................311
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................297
-  The (latest release of) Marlin Setup for BIQU TMC2208 V3.0 Drivers in Stand-alone Mode...................301
-BIQU TMC2208 V3.0 One Time Programming (OTP) Mode..........................................................306
-  Driver Chip Chart for BIQU TMC2208 in OTP Mode...........................................................306
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................307
+    Have RST&SLP Set.......................................................................................313
+  The (latest release of) Marlin Setup for BIQU TMC2208 V3.0 Drivers in One Time Programming (OTP) Mode....317
+BIQU TMC2208 V3.0 UART Mode................................................................................322
+  Driver Chip Chart for BIQU TMC2208 in UART Mode..........................................................322
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............325
+  The (latest release of) Marlin Setup for BIQU TMC2208 V3.0 Drivers in UART Mode..........................331
+FYSETC TMC2208 V1.2 Stand-alone Mode.......................................................................341
+  Driver Chip Chart for FYSETC TMC2208 in Stand-alone Mode.................................................341
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................342
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................309
-  The (latest release of) Marlin Setup for BIQU TMC2208 V3.0 Drivers in One Time Programming (OTP) Mode....313
-BIQU TMC2208 V3.0 UART Mode................................................................................318
-  Driver Chip Chart for BIQU TMC2208 in UART Mode..........................................................318
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in UART Mode..............................321
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............322
-  The (latest release of) Marlin Setup for BIQU TMC2208 V3.0 Drivers in UART Mode..........................324
-FYSETC TMC2208 V1.2 Stand-alone Mode.......................................................................334
-  Driver Chip Chart for FYSETC TMC2208 in Stand-alone Mode.................................................334
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................335
+    Have RST&SLP Set.......................................................................................344
+  The (latest release of) Marlin Setup for FYSETC TMC2208 V1.2 Drivers in Stand-alone Mode.................348
+FYSETC TMC2208 V1.2 One Time Programming (OTP) Mode........................................................353
+  Driver Chip Chart for FYSETC TMC2208 in OTP Mode.........................................................353
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................354
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................337
-  The (latest release of) Marlin Setup for FYSETC TMC2208 V1.2 Drivers in Stand-alone Mode.................341
-FYSETC TMC2208 V1.2 One Time Programming (OTP) Mode........................................................346
-  Driver Chip Chart for FYSETC TMC2208 in OTP Mode.........................................................346
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................347
+    Have RST&SLP Set.......................................................................................356
+  The (latest release of) Marlin Setup for FYSETC TMC2208 V1.2 Drivers in One Time Programming (OTP) Mode..360
+FYSETC TMC2208 V1.2 UART Mode..............................................................................365
+  Driver Chip Chart for FYSETC TMC2208 in UART Mode........................................................365
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............368
+  The (latest release of) Marlin Setup for FYSETC TMC2208 V1.2 Drivers in UART Mode........................374
+BIQU TMC2225 V1.0 Stand-alone Mode.........................................................................384
+  Driver Chip Chart for BIQU TMC2225 in Stand-alone Mode...................................................384
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................385
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................349
-  The (latest release of) Marlin Setup for FYSETC TMC2208 V1.2 Drivers in One Time Programming (OTP) Mode..353
-FYSETC TMC2208 V1.2 UART Mode..............................................................................358
-  Driver Chip Chart for FYSETC TMC2208 in UART Mode........................................................358
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in UART Mode..............................361
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............362
-  The (latest release of) Marlin Setup for FYSETC TMC2208 V1.2 Drivers in UART Mode........................364
-BIQU TMC2225 V1.0 Stand-alone Mode.........................................................................374
-  Driver Chip Chart for BIQU TMC2225 in Stand-alone Mode...................................................374
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................375
+    Have RST&SLP Set.......................................................................................387
+  The (latest release of) Marlin Setup for BIQU TMC2225 V1.0 Drivers in Stand-alone Mode...................391
+BIQU TMC2225 V1.0 One Time Programming (OTP) Mode..........................................................396
+  Driver Chip Chart for BIQU TMC2225 in OTP Mode...........................................................396
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................397
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................377
-  The (latest release of) Marlin Setup for BIQU TMC2225 V1.0 Drivers in Stand-alone Mode...................381
-BIQU TMC2225 V1.0 One Time Programming (OTP) Mode..........................................................386
-  Driver Chip Chart for BIQU TMC2225 in OTP Mode...........................................................386
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................387
+    Have RST&SLP Set.......................................................................................399
+  The (latest release of) Marlin Setup for BIQU TMC2225 V1.0 Drivers in One Time Programming (OTP) Mode....403
+BIQU TMC2225 V1.0 UART Mode................................................................................408
+  Driver Chip Chart for BIQU TMC2225 in UART Mode..........................................................408
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............411
+  The (latest release of) Marlin Setup for BIQU TMC2225 V1.0 Drivers in UART Mode..........................417
+BIQU TMC2209 V1.2 Stand-alone Mode for StealthChop.........................................................427
+  Driver Chip Chart for BIQU TMC2209 in Stand-alone Mode (StealthChop).....................................427
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................428
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................389
-  The (latest release of) Marlin Setup for BIQU TMC2225 V1.0 Drivers in One Time Programming (OTP) Mode....393
-BIQU TMC2225 V1.0 UART Mode................................................................................398
-  Driver Chip Chart for BIQU TMC2225 in UART Mode..........................................................398
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in UART Mode..............................401
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............402
-  The (latest release of) Marlin Setup for BIQU TMC2225 V1.0 Drivers in UART Mode..........................404
-BIQU TMC2209 V1.2 Stand-alone Mode for StealthChop.........................................................414
-  Driver Chip Chart for BIQU TMC2209 in Stand-alone Mode (StealthChop).....................................414
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................415
+    Have RST&SLP Set.......................................................................................430
+  The (latest release of) Marlin Setup for BIQU TMC2209 V1.2 Drivers in Stand-alone Mode for StealthChop...434
+BIQU TMC2209 V1.2 Stand-alone Mode for SpreadCycle.........................................................439
+  Driver Chip Chart for BIQU TMC2209 in Stand-alone Mode (SpreadCycle).....................................439
+  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+    RST&SLP PINS Set.......................................................................................440
   SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................417
-  The (latest release of) Marlin Setup for BIQU TMC2209 V1.2 Drivers in Stand-alone Mode for StealthChop...421
-BIQU TMC2209 V1.2 Stand-alone Mode for SpreadCycle.........................................................426
-  Driver Chip Chart for BIQU TMC2209 in Stand-alone Mode (SpreadCycle).....................................426
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-    PINS Set...............................................................................................427
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do Not 
-    Have RST&SLP Set.......................................................................................429
-  The (latest release of) Marlin Setup for BIQU TMC2209 V1.2 Drivers in Stand-alone Mode for SpreadCycle...433
-BIQU TMC2209 V1.2 UART Mode................................................................................438
-  Driver Chip Chart for BIQU TMC2209 in UART Mode..........................................................438
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in UART Mode..............................441
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............442
-  Information on Sensor-less Homing........................................................................443
-  The (latest release of) Marlin Setup for BIQU TMC2209 V1.2 Drivers in UART Mode..........................446
-BIQU TMC5160 V1.2 SPI Mode.................................................................................459
-  Driver Chip Chart for BIQU TMC5160 in SPI Mode...........................................................459
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in SPI Mode...............................462
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in SPI Mode..............464
-  Information on Sensor-less Homing........................................................................465
-  The (latest release of) Marlin Setup for BIQU TMC5160 V1.2 Drivers in SPI Mode...........................468
-BIQU TMC5161 V1.0 SPI Mode.................................................................................481
-  Driver Chip Chart for BIQU TMC5161 in SPI Mode...........................................................481
-  SKR V1.4 TURBO LEGEND of Driver Chip Chart for Stepper Drivers in SPI Mode...............................484
-  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in SPI Mode..............486
-  Information on Sensor-less Homing........................................................................487
-  The (latest release of) Marlin Setup for BIQU TMC5161 V1.0 Drivers in SPI Mode...........................490
-APPENDIX A.................................................................................................503
-  How to adjust the Vref on a Stepper Motor Driver board using the Potentiometer...........................503
-APPENDIX B.................................................................................................505
-  For the TMC drivers what's the difference between stand-alone mode and ("UART" or "SPI ") modes?.........505
-  How to Calculate Vref for Non-TMC Stepper Motor Divers...................................................505
-  How to Calculate Vref for TMC Stepper Motor Drivers......................................................506
-  Driving Current Calculation Formulas for TMC Stepper Motor Drivers.......................................507
-    #1 TMC2100 with Rs = 0.110Ω (110mΩ)....................................................................507
-    #2 TMC2130 with Rs = 0.110Ω (110mΩ)....................................................................507
-    #3 TMC2208 with Rs = 0.110Ω (110mΩ) for Stand-alone Mode...............................................507
-    #4 TMC2208 with Rs = 0.110Ω (110mΩ) for UART Mode......................................................508
-    #5 TMC2209 with Rs = 0.110Ω (110mΩ) for Stand-alone Mode...............................................508
-    #6 TMC2209 with Rs = 0.110Ω (110mΩ) for UART Mode......................................................509
-    #7 TMC2225 with Rs = 0.150Ω (150mΩ) for UART Mode......................................................509
-    #8 TMC5160 with Rs = 0.075Ω (75mΩ) for SPI Mode........................................................509
-    #9 TMC5161 with Rs = 0.062Ω (62mΩ) for SPI Mode........................................................510
-    #10 TMC2225 with Rs = 0.150Ω (150mΩ) for Stand-alone Mode..............................................510
-APPENDIX C.................................................................................................511
-  The (Latest Release of) Marlin Setup That Is Common to ALL Stepper Motor Drivers.........................511
-    Link to BIGTREETECH SKR V1.4 Instruction Manual.pdf....................................................511
-    Link to Pronterface Software...........................................................................512
-    Link to How to Calibrate your 3D Printer...............................................................512
-    SKR V1.4 TURBO Color PIN Diagram.......................................................................524
-    SKR V1.4 TURBO Color Wiring Diagram....................................................................525
-    DCDC Mode V1.0 Board...................................................................................528
-    SKR V1.4 TURBO Color PIN 1 Diagram.....................................................................530
-    SKR V1.4 TURBO Color Schematic Diagram.................................................................531
-    SKR V1.4 TURBO Uncolored Schematic Diagram.............................................................532
-APPENDIX D.................................................................................................533
-  Legends for SKR V1.4 TURBO Stepper Driver Socket Representations.........................................533
-    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Have 
-      RST&SLP Set..........................................................................................534
-    SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have RST&SLP 
-      PINS Set.............................................................................................537
-      Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board.................................538
-    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which Do 
-      Not Have RST&SLP Set.................................................................................539
-    SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have RST&SLP 
-      PINS Set.............................................................................................542
-    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers..............543
-    SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers...............................545
-      How to Create a SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers.....................547
-    SKR V1.4 TURBO LEGEND of Driver Socket Representation for SPI Capable Stepper Motor Drivers............548
-    SKR V1.4 TURBO LEGEND of Driver Socket Representation for UART Capable Stepper Motor Drivers...........549
-    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Sensor-less Homing Capable Stepper Motor 
-      Drivers..............................................................................................550
-  Examples for Stepper Driver Socket Representations.......................................................552
+    Have RST&SLP Set.......................................................................................442
+  The (latest release of) Marlin Setup for BIQU TMC2209 V1.2 Drivers in Stand-alone Mode for SpreadCycle...446
+BIQU TMC2209 V1.2 UART Mode................................................................................451
+  Driver Chip Chart for BIQU TMC2209 in UART Mode..........................................................451
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in UART Mode.............454
+  Information on Sensor-less Homing........................................................................458
+  The (latest release of) Marlin Setup for BIQU TMC2209 V1.2 Drivers in UART Mode..........................462
+BIQU TMC5160 V1.2 SPI Mode.................................................................................475
+  Driver Chip Chart for BIQU TMC5160 in SPI Mode...........................................................475
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in SPI Mode..............478
+  Information on Sensor-less Homing........................................................................481
+  The (latest release of) Marlin Setup for BIQU TMC5160 V1.2 Drivers in SPI Mode...........................485
+BIQU TMC5161 V1.0 SPI Mode.................................................................................498
+  Driver Chip Chart for BIQU TMC5161 in SPI Mode...........................................................498
+  SKR V1.4 TURBO LEGEND of Driver Socket Representation for Stepper Motor Drivers in SPI Mode..............501
+  Information on Sensor-less Homing........................................................................504
+  The (latest release of) Marlin Setup for BIQU TMC5161 V1.0 Drivers in SPI Mode...........................508
+APPENDIX A.................................................................................................521
+  How to adjust the Vref on a Stepper Motor Driver board using the Potentiometer...........................521
+APPENDIX B.................................................................................................523
+  For the TMC drivers what's the difference between stand-alone mode and ("UART" or "SPI ") modes?.........523
+  How to Calculate Vref for Non-TMC Stepper Motor Divers...................................................523
+  How to Calculate Vref for TMC Stepper Motor Drivers......................................................524
+  Driving Current Calculation Formulas for TMC Stepper Motor Drivers.......................................525
+    #1 TMC2100 with Rs = 0.110Ω (110mΩ)....................................................................525
+    #2 TMC2130 with Rs = 0.110Ω (110mΩ)....................................................................525
+    #3 TMC2208 with Rs = 0.110Ω (110mΩ) for Stand-alone Mode...............................................525
+    #4 TMC2208 with Rs = 0.110Ω (110mΩ) for UART Mode......................................................526
+    #5 TMC2209 with Rs = 0.110Ω (110mΩ) for Stand-alone Mode...............................................526
+    #6 TMC2209 with Rs = 0.110Ω (110mΩ) for UART Mode......................................................527
+    #7 TMC2225 with Rs = 0.150Ω (150mΩ) for UART Mode......................................................527
+    #8 TMC5160 with Rs = 0.075Ω (75mΩ) for SPI Mode........................................................527
+    #9 TMC5161 with Rs = 0.062Ω (62mΩ) for SPI Mode........................................................528
+    #10 TMC2225 with Rs = 0.150Ω (150mΩ) for Stand-alone Mode..............................................528
+APPENDIX C.................................................................................................529
+  The (Latest Release of) Marlin Setup That Is Common to ALL Stepper Motor Drivers.........................529
+    Link to BIGTREETECH SKR V1.4 Instruction Manual.pdf....................................................529
+    Link to Download Marlin 2.0.x Firmware Website.........................................................529
+    Link to Pronterface Software...........................................................................530
+    Link to How to Calibrate your 3D Printer...............................................................530
+  SKR V1.4 TURBO Color PIN Diagram.........................................................................543
+  SKR V1.4 TURBO Color Wiring Diagram......................................................................544
+  DCDC Mode V1.0 Board.....................................................................................547
+  SKR V1.4 TURBO Color PIN 1 Diagram.......................................................................549
+  SKR V1.4 TURBO Color Schematic Diagram...................................................................550
+  SKR V1.4 TURBO Uncolored Schematic Diagram...............................................................551
+APPENDIX D.................................................................................................552
+  Legends for SKR V1.4 TURBO Stepper Driver Socket Representations.........................................552
+    SKR V1.4 TURBO LEGEND COMMON to ALL Driver Socket Representation.......................................553
+    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which 
+      Have RST&SLP Set.....................................................................................554
+    SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have 
+	  RST&SLP PINS Set.....................................................................................557
+      Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board.................................558
+    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers 
+	  Which Do Not Have RST&SLP Set........................................................................559
+    SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
+      RST&SLP PINS Set.....................................................................................562
+    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers..............563
+    SKR V1.4 TURBO LEGEND of Driver Chip Chart for Tri State Stepper Drivers...............................565
+      How to Create a SKR V1.4 TURBO DuPont Jumper Cable to Use with Tri State Drivers.....................567
+    SKR V1.4 TURBO LEGEND of Driver Socket Representation for SPI Capable Stepper Motor Drivers............568
+    SKR V1.4 TURBO LEGEND of Driver Socket Representation for UART Capable Stepper Motor Drivers...........572
+    SKR V1.4 TURBO LEGEND of Driver Socket Representation for Sensor-less Homing Capable Stepper 
+	  Motor Drivers........................................................................................579
+  Examples for Stepper Driver Socket Representations.......................................................584
     Example 1 (LV8729 Driver Board; Binary State Driver without RST&SLP) for SKR V1.4 TURBO Driver Socket 
-      Representation.......................................................................................552
+      Representation.......................................................................................584
     Example 2 (A4988 Driver Board; Binary State Driver with RST&SLP) for SKR V1.4 TURBO Driver Socket 
-      Representation.......................................................................................553
+      Representation.......................................................................................585
     Example 3 (TMC2130 Driver in Stand-alone Mode; Tri State Driver) for SKR V1.4 TURBO Driver Socket 
-      Representation.......................................................................................554
-    Example 4 (TMC2209 UART with Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation.......555
-    Example 5 (TMC2209 UART WITHOUT Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation....556
-    Example 6 (TMC2130 SPI with Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation........557
-    Example 7 (TMC2130 SPI WITHOUT Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation.....558
-APPENDIX E.................................................................................................559
-  Location Of “firmware.bin” File from the Marlin Compilation for SKR V1.4 TURBO Board.....................559
-APPENDIX F.................................................................................................562
-  Links to Reference Material..............................................................................562
-    Marlin Firmware Documentation..........................................................................562
-    Information on Stepper Motor Drivers and Micro-stepping................................................562
-    POLOLU A4988 and BIQU A4988............................................................................563
-    DRV8825................................................................................................563
-    BIQU LV8729, FYSETC LV8729, LERDGE LV8729, and MKS LV8729..............................................564
-    BIQU LV8729............................................................................................564
-    FYSETC LV8729..........................................................................................565
-    LERDGE LV8729..........................................................................................565
-    MKS LV8729.............................................................................................566
-    FYSETC S6128 V1.1......................................................................................566
-    FYSETC ST820...........................................................................................567
-    BIQU ST820.............................................................................................567
-    POLOLU ST820 (STSPIN820)...............................................................................568
-    POLOLU MP6500..........................................................................................568
-    POLOLU TB67S249FTG.....................................................................................569
-    BIQU S109 and FYSETC S109..............................................................................569
-    BIQU S109..............................................................................................570
-    FYSETC S109............................................................................................570
-    Marlin Firmware Documentation Specific to TMC Drivers..................................................571
-    Information Common to All TMC Drivers..................................................................571
-    BIQU TMC2100 and MKS TMC2100...........................................................................572
-    BIQU TMC2130...........................................................................................573
-    Information Common to BIQU TMC2208 V3.0 and FYSETC TMC2208 V1.2........................................573
-    Information Common to BIQU TMC2208 V3.0 and FYSETC TMC2208 V1.2 (Continued)............................574
-    BIQU TMC2208 V3.0......................................................................................574
-    FYSETC TMC2208 V1.2....................................................................................574
-    Information Common to TMC2208 and BIQU TMC2225.........................................................575
-    BIQU TMC2225 V1.0......................................................................................575
-    BIQU TMC2209 V1.2......................................................................................576
-    BIQU TMC5160 V1.2......................................................................................576
-    BIQU TMC5161 V1.0......................................................................................577
-    SKR V1.4 TURBO Board...................................................................................577
-    Facebook Groups........................................................................................578
-    Miscellaneous Information..............................................................................579
-    Miscellaneous Information (continued)..................................................................580
-APPENDIX G.................................................................................................581
-  BIGTREETECH Reference Material...........................................................................581
-    Original PIN Diagram...................................................................................581
-    Original Wiring Diagram 1..............................................................................582
-    Original Wiring Diagram 2 for STEP/DIR Mode............................................................583
-    Original Wiring Diagram 3 for UART Mode................................................................584
-    Original Wiring Diagram 4 for SPI Mode.................................................................585
-    Original PIN 1 Diagram.................................................................................586
-    Additional Original Reference Material for PIN 1 Diagram...............................................587
-    Original Schematic Diagram.............................................................................588
+      Representation.......................................................................................586
+    Example 4 (TMC2209 UART with Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation.......587
+    Example 5 (TMC2209 UART WITHOUT Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation....588
+    Example 6 (TMC2130 SPI with Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation........589
+    Example 7 (TMC2130 SPI WITHOUT Sensor-less Homing) for SKR V1.4 TURBO Driver Socket Representation.....590
+APPENDIX E.................................................................................................591
+  Location Of “firmware.bin” File from the Marlin Compilation for SKR V1.4 TURBO Board.....................591
+APPENDIX F.................................................................................................594
+  Links to Reference Material..............................................................................594
+    Marlin Firmware Documentation..........................................................................594
+    Information on Stepper Motor Drivers and Micro-stepping................................................594
+    POLOLU A4988 and BIQU A4988............................................................................595
+    DRV8825................................................................................................595
+    BIQU LV8729, FYSETC LV8729, LERDGE LV8729, and MKS LV8729..............................................596
+    BIQU LV8729............................................................................................596
+    FYSETC LV8729..........................................................................................597
+    LERDGE LV8729..........................................................................................597
+    MKS LV8729.............................................................................................598
+    FYSETC S6128 V1.1......................................................................................598
+    FYSETC ST820...........................................................................................599
+    BIQU ST820.............................................................................................599
+    POLOLU ST820 (STSPIN820)...............................................................................600
+    POLOLU MP6500..........................................................................................600
+    POLOLU TB67S249FTG.....................................................................................601
+    BIQU S109 and FYSETC S109..............................................................................601
+    BIQU S109..............................................................................................602
+    FYSETC S109............................................................................................602
+    Marlin Firmware Documentation Specific to TMC Drivers..................................................603
+    Information Common to All TMC Drivers..................................................................603
+    BIQU TMC2100 and MKS TMC2100...........................................................................604
+    BIQU TMC2130...........................................................................................605
+    Information Common to BIQU TMC2208 V3.0 and FYSETC TMC2208 V1.2........................................605
+    Information Common to BIQU TMC2208 V3.0 and FYSETC TMC2208 V1.2 (Continued)............................606
+    BIQU TMC2208 V3.0......................................................................................606
+    FYSETC TMC2208 V1.2....................................................................................606
+    Information Common to TMC2208 and BIQU TMC2225.........................................................607
+    BIQU TMC2225 V1.0......................................................................................607
+    BIQU TMC2209 V1.2......................................................................................608
+    BIQU TMC5160 V1.2......................................................................................608
+    BIQU TMC5161 V1.0......................................................................................609
+    SKR V1.4 TURBO Board...................................................................................609
+    Facebook Groups........................................................................................610
+    Miscellaneous Information..............................................................................611
+    Miscellaneous Information (continued)..................................................................612
+APPENDIX G.................................................................................................614
+  BIGTREETECH Reference Material...........................................................................614
+    Original PIN Diagram...................................................................................614
+    Original Wiring Diagram 1..............................................................................615
+    Original Wiring Diagram 2 for STEP/DIR Mode............................................................616
+    Original Wiring Diagram 3 for UART Mode................................................................617
+    Original Wiring Diagram 4 for SPI Mode.................................................................618
+    Original PIN 1 Diagram #1..............................................................................619
+    Additional Original Reference Material for PIN 1 Diagram #2............................................620
+    Additional Original Reference Material for PIN 1 Diagram #3............................................621
+    Original Schematic Diagram.............................................................................622
+APPENDIX H.................................................................................................623
+  Filament Runout Sensor Guide for SKR V1.4 TURBO Board....................................................623
+    Filament Runout Sensor Wired to Limit Switch {X-, Y-, Z-, E0DET, E1DET, or PWRDET}.....................624
+    Marlin 2.0.x Setup for Filament Runout Sensor Connected to E0DET Connector.............................625
+      Marlin 2.0.x Setup for Filament Runout Sensor........................................................626
+APPENDIX I.................................................................................................630
+  “Connecting up Raspberry Pi via TFT Connector” Guide for SKR V1.4 TURBO Board............................630
+    Connecting SKR V1.4 TURBO to Raspberry Pi to Eliminate USB Cable Via TFT Connector.....................631
+      TFT Connector Wiring Diagram for Connecting SKR V1.4 TURBO to Raspberry Pi to Eliminate USB Cable....634
+    Marlin 2.0.x Setup for Connecting up Raspberry Pi......................................................637
+APPENDIX J.................................................................................................639
+  “Connecting up Raspberry Pi via WIFI Header” Guide for SKR V1.4 TURBO Board..............................639
+    Connecting SKR V1.4 TURBO to Raspberry Pi to Eliminate USB Cable via WIFI Header.......................640
+      WIFI Header Wiring Diagram for Connecting SKR V1.4 TURBO to Raspberry Pi to Eliminate USB Cable......643
+    Marlin 2.0.x Setup for Connecting up Raspberry Pi......................................................646
+APPENDIX K.................................................................................................648
+  BLTouch Guide for SKR V1.4 TURBO Board...................................................................648
+    Connecting SKR V1.4 TURBO with BLTouch.................................................................649
+      Wiring Diagram for Connecting SKR V1.4 TURBO with BLTouch............................................652
+    Marlin 2.0.x Firmware Setup for Connecting a BLTouch to the SKR V1.4 TURBO Board.......................653
+      Explanation when to use Marlin variable Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN...........................657
+      Understanding Marlin Firmware’s NOZZLE_TO_PROBE_OFFSET Setting.......................................660
+APPENDIX L.................................................................................................675
+  PT100 Guide for SKR V1.4 TURBO Board.....................................................................675
+    Connecting SKR V1.4 TURBO with PT100 Amplifier Board and PT100 Sensor..................................676
+      Instructions on How to Perform the SKR V1.4 TURBO Hardware Hack to Obtain an ADC Input on a 
+        Thermistor Port....................................................................................681
+    Instructions for Suppling Power to the PT100 Amplifier Board...........................................684
+      Method #1 for Powering the PT100 Amplifier Board (Digital PWR).......................................685
+      Method #2 for Powering PT100 Amplifier Board (Analog PWR)............................................686
+    Technique #1 & Method #1 (Digital PWR) Wiring Diagram for Connecting Up Your PT1100 to the TFT Header..687
+    Technique #2 & Method #1 (Digital PWR) Wiring Diagram for Connecting Up Your PT100 to the 
+      TH0 Connector........................................................................................688
+    Technique #2 & Method #2 (Analog PWR) Wiring Diagram for Connecting Up Your PT100 to the TH0 Connector.689
+    Marlin 2.0.x Firmware Setup for Connecting a PT100 Sensor to the SKR V1.4 TURBO Board..................690
+      Marlin 2.0.x Firmware Setup via Technique #1.........................................................691
+      Marlin 2.0.x Firmware Setup via Technique #2.........................................................696
+APPENDIX M.................................................................................................701
+  K-Type Thermocouple Guide for SKR V1.4 TURBO Board.......................................................701
+    Connecting SKR V1.4 TURBO with K-Type Thermocouple Sensor and Adafruit’s AD8495 Amplifier Board........702
+      Instructions on How to Perform the SKR V1.4 TURBO Hardware Hack to Obtain an ADC Input on a 
+        Thermistor Port....................................................................................707
+    Instructions for Suppling Power to the AD8495 Amplifier Board..........................................710
+      Method #1 for Powering the AD8495 Amplifier Board (Digital PWR)......................................711
+      Method #2 for Powering AD8495 Amplifier Board (Analog PWR)...........................................712
+    Technique #1 & Method #1 (Digital PWR) Wiring Diagram for Connecting Up Your K-Type Thermocouple 
+      to the TFT Header....................................................................................713
+    Technique #2 & Method #1 (Digital PWR) Wring Diagram for Connecting Up Your K-Type Thermocouple 
+      to the TH0 Connector.................................................................................714
+    Technique #2 & Method #2 (Analog PWR) Wiring Diagram for Connecting Up Your K-Type Thermocouple 
+      to the TH0 Connector.................................................................................715
+    Marlin 2.0.x Firmware Setup for Connecting a K-Type Thermocouple Sensor and Adafruit’s AD8495 
+      Amplifier Board......................................................................................716
+      Marlin 2.0.x Firmware Setup via Technique #1.........................................................717
+      Marlin 2.0.x Firmware Setup via Technique #2.........................................................723
 ```
