@@ -277,10 +277,10 @@ APPENDIX D......................................................................
     SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers Which 
       Have RST&SLP Set.....................................................................................554
     SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Have 
-	  RST&SLP PINS Set.....................................................................................557
+	  RST&SLP PINS Set.......................................................................................557
       Special Consideration of D Jumper (RST&SLP) for SKR V1.4 TURBO Board.................................558
     SKR V1.4 TURBO LEGEND of Driver Socket Representation for Binary State Stepper Motor Drivers 
-	  Which Do Not Have RST&SLP Set........................................................................559
+	  Which Do Not Have RST&SLP Set..........................................................................559
     SKR V1.4 TURBO LEGEND of Driver Chip Chart for Binary State Stepper Drivers Which Do Not Have 
       RST&SLP PINS Set.....................................................................................562
     SKR V1.4 TURBO LEGEND of Driver Socket Representation for Tri State Stepper Motor Drivers..............563
@@ -289,7 +289,7 @@ APPENDIX D......................................................................
     SKR V1.4 TURBO LEGEND of Driver Socket Representation for SPI Capable Stepper Motor Drivers............568
     SKR V1.4 TURBO LEGEND of Driver Socket Representation for UART Capable Stepper Motor Drivers...........572
     SKR V1.4 TURBO LEGEND of Driver Socket Representation for Sensor-less Homing Capable Stepper 
-	  Motor Drivers........................................................................................579
+	  Motor Drivers..........................................................................................579
   Examples for Stepper Driver Socket Representations.......................................................584
     Example 1 (LV8729 Driver Board; Binary State Driver without RST&SLP) for SKR V1.4 TURBO Driver Socket 
       Representation.......................................................................................584
