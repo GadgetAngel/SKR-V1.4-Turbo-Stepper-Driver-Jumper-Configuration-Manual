@@ -39,7 +39,7 @@ If chat is more your speed, you can join the MarlinFirmware Discord server:
 
 ### Reporting Bugs
 
-This section guides you through submitting a Bug Report for SKR-PRO-V1.1-Stepper-Driver-Jumper-Configuration-Manual. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+This section guides you through submitting a Bug Report for SKR-V1.4-Turbo-Stepper-Driver-Jumper-Configuration-Manual. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
 When you are creating a Bug Report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](./ISSUE_TEMPLATE/bug_report.md), the information it asks for helps us resolve issues faster.
 
